@@ -2,40 +2,34 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    
+@*<div class="jumbotron">
+        <img src="~/Content/img/pexels-photo-804899.jpeg"  width="850" height="500"/>
+    </div>*@
+
+<div class=" row">
+
+    <div class="col-md-4"><img src="~/Content/img/pexels-photo-804899.jpeg" width="400" height="350" /></div>
+    <div class="col-md-4"><img src="~/Content/img/pexels-photo-291762.jpeg" width="400" height="350" /></div>
+    <div class="col-md-4"><img src="~/Content/img/pexels-photo-413727.jpeg" width="400" height="350" /></div>
+
 </div>
 
 <div class="row">
-    <div class="col-md-2">
 
-        <p> Men </p>
+    <div class="col-md-2">@Html.ActionLink("Men", "ProductList", "Admin")</div>
+    <div class="col-md-2">@Html.ActionLink("Women", "ProductList", "Admin")</div>
+    <div class="col-md-2">@Html.ActionLink("Children", "ProductList", "Admin")</div>
 
-    </div>
-    <div class="col-md-2">
-        <p>Women</p>
-
-    </div>
-    <div class="col-md-2">
-        <p>Children</p>
-
-    </div>
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-2">
-
-
-    </div>
-
-    <div class="col-md-2">
-
-
-    </div>
-
-
-
-
-
-
-
+ 
 </div>
+
+@*<div class="row">
+    <div class="col-md-2"><p> Men </p></div>
+    <div class="col-md-2"><p>Women</p></div>
+    <div class="col-md-2"><p>Children</p></div>
+
+    <div class="col-md-2"> </div>
+    <div class="col-md-2"> </div>
+    <div class="col-md-2"> </div>
+
+</div>*@

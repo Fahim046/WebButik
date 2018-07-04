@@ -15,7 +15,6 @@ namespace WebButik.Migrations.MyDbContext
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\MyDbContext";
         }
-
         protected override void Seed(WebButik.Models.ButikDB context)
         {
             //  This method will be called after migrating to the latest version.
@@ -25,8 +24,6 @@ namespace WebButik.Migrations.MyDbContext
 
             // only Product/Customer
             // PM> Update-Database  -ConfigurationTypeName WebButik.Migrations.MyDbContext.Configuration
-           
-
         }
     }
 }

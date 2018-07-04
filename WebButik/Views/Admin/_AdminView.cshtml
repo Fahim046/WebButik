@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebButik.Models.Product>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create", "Admin")
+</p>*@
+
+<div class="row">
+
+    <div class="col-md-2"> </div>
+    <div class="col-md-2"> </div>
+    <div class="col-md-2"> </div>
+
+    <div class="col-md-2">@Html.ActionLink("Create Product", "Create", "Admin")</div>
+    <div class="col-md-2">@Html.ActionLink("Product List", "ProductList", "Admin")</div>
+    <div class="col-md-2">@Html.ActionLink("Customer List", "ProductList", "Admin")</div>
+
+
+</div>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th></th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+        </td>
+    </tr>
+}
+
+</table>
