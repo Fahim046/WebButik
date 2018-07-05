@@ -14,30 +14,48 @@ namespace WebButik.Controllers
         // GET: Admin
         public ActionResult AdminView()
         {
-            return PartialView("_AdminView", db.Product.ToList());
+            //return PartialView("_AdminView", db.Product.ToList());
+            return PartialView("_AdminView");
         }
 
         [HttpGet]
-        public ActionResult Create()
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create() // By clicking Create, first we come here and return to the _create page where we post the product
         {
-            return View();
+            return PartialView("_create");
         }  
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(Product product)
         {
             if (ModelState.IsValid)
             {
                 db.Product.Add(product);
                 db.SaveChanges();
-                //db.Product.Add(product);
-                return RedirectToAction("Index");
+
+                return PartialView("_AdminView");
+
+               // return PartialView("_productList", db.Product.ToList());
+                //  return RedirectToAction("Index");
+
             }
+
             else
             {
-                return View(product);
+                return PartialView("_create");
+                //return View(product);
             }
 
         }
+        [Authorize(Roles = "Admin")]
+        public ActionResult ProductList()
+        {
+             return PartialView("_productList", db.Product.ToList());
+
+            // return View("ProductList", db.Product.ToList());
+        }
+
+
     }
 }
