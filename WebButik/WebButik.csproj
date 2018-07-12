@@ -199,6 +199,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\IdDbContext\201806261423421_InitialCreate.cs" />
     <Compile Include="Migrations\IdDbContext\201806261423421_InitialCreate.Designer.cs">
       <DependentUpon>201806261423421_InitialCreate.cs</DependentUpon>
@@ -328,8 +329,10 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Admin\_AdminView.cshtml" />
-    <Content Include="Views\Admin\_productList.cshtml" />
     <Content Include="Views\Admin\_create.cshtml" />
+    <Content Include="Views\Admin\_productList.cshtml" />
+    <Content Include="Views\Admin\_menProduct.cshtml" />
+    <Content Include="Views\Admin\MenProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

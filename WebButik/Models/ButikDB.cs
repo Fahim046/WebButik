@@ -14,7 +14,7 @@ namespace WebButik.Models
         }
 
         public DbSet<Product> Product { get; set; }
-        public DbSet<Customer> Cusomer { get; set; }
+        public DbSet<Customer> Customer { get; set; }
   
     }
 }

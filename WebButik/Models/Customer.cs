@@ -26,5 +26,10 @@ namespace WebButik.Models
         [Required]
         [MaxLength(100)]
         public string Telephone { get; set; }
+
+
+
+
+
     }
 }

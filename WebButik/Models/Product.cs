@@ -16,6 +16,20 @@ namespace WebButik.Models
         [MaxLength(100)]
         public string ProductName { get; set; }
 
+        [Required]
+        public string ProductType { get; set; }
+        
+        [Required]
+        public decimal ProductPrice { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string ProductSize { get; set; }
+
+
+
+
+
         //[Required]
         //[MaxLength(100)]
         //public string ProductPrice { get; set; }

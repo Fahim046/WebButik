@@ -49,6 +49,8 @@ namespace WebButik.Controllers
 
         }
         [Authorize(Roles = "Admin")]
+
+
         public ActionResult ProductList()
         {
              return PartialView("_productList", db.Product.ToList());
@@ -56,6 +58,18 @@ namespace WebButik.Controllers
             // return View("ProductList", db.Product.ToList());
         }
 
+
+        public ActionResult MenProduct()
+        {
+
+           if(User.IsInRole("Admin"))
+            {
+                return PartialView("_menProduct", db.Product.ToList());
+            }
+                      
+                return View("MenProduct", db.Product.ToList());
+
+        }
 
     }
 }
