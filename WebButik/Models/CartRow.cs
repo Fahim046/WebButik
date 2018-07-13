@@ -11,6 +11,8 @@ namespace WebButik.Models
 
         [Key]
         public int CartrowId { get; set; }
+        public int Amount { get; set; }
+        public Product Product { get; set; }
 
     }
 }
