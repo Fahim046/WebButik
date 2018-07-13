@@ -20,7 +20,7 @@ namespace WebButik.Models
         public string LastName { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(100)]         
         public string Address { get; set; }
 
         [Required]
@@ -28,7 +28,7 @@ namespace WebButik.Models
         public string Telephone { get; set; }
 
 
-
+        public List<Order> Orders { get; set; }
 
 
     }
