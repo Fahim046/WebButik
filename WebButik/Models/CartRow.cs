@@ -12,7 +12,12 @@ namespace WebButik.Models
         [Key]
         public int CartrowId { get; set; }
         public int Amount { get; set; }
+
+
+
+        //One - One Relationships
         public Product Product { get; set; }
+        public Cart Cart { get; set; }
 
     }
 }

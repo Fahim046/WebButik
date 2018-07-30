@@ -8,6 +8,7 @@ namespace WebButik.Models
 {
     public class OrderRow
     {
+
         [Key]
         public int OrderRowId { get; set; }
 

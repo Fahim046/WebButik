@@ -26,16 +26,11 @@ namespace WebButik.Models
         [MaxLength(100)]
         public string ProductSize { get; set; }
 
-        public List<CartRow> Cartrows { get; set; }
-        public List<OrderRow> Orderrows { get; set; }
 
 
-
-
-
-        //[Required]
-        //[MaxLength(100)]
-        //public string ProductPrice { get; set; }
+        //public List<CartRow> Cartrows { get; set; }
+        //public List<OrderRow> Orderrows { get; set; }
+        
 
 
 

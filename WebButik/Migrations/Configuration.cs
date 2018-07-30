@@ -9,7 +9,7 @@ namespace WebButik.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(WebButik.Models.ButikDB context)

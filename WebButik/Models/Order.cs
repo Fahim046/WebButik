@@ -11,7 +11,7 @@ namespace WebButik.Models
 
         [Key]
         public int OrderId { get; set; }
-        public List<CartRow> Cartrows { get; set; }
+        
         public List<OrderRow> Orderrows { get; set; }
 
 

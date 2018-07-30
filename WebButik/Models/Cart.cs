@@ -10,6 +10,9 @@ namespace WebButik.Models
     {
         [Key]
         public int CartId { get; set; }
-        public List<CartRow> Cartrows { get; set; }
+
+        public List<CartRow> Cartrows { get; set; } // One - Many Realtionship
+        //public Customer Customer { get; set; }  // One - One Relationship
+
     }
 }

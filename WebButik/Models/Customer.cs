@@ -28,7 +28,8 @@ namespace WebButik.Models
         public string Telephone { get; set; }
 
 
-        public List<Order> Orders { get; set; }
+        public Cart Cart { get; set; } //One-One Relationship
+        public List<Order> Orders { get; set; } // One-Many Relationship  
 
 
     }
