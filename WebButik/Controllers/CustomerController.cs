@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebButik.Models;
+using Microsoft.AspNet.Identity;
 
 namespace WebButik.Controllers
 {
@@ -18,15 +19,16 @@ namespace WebButik.Controllers
         }
 
 
-        [Authorize(Roles = "user")]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddCart(Product product)
         {
             //return PartialView("_CustomerView");
+            User.Identity.GetUserId();
 
-            return RedirectToAction("_CustomerView");
+            // User -> Coustemer -> Cart -> CartRows -> Product
+            return View();
+
         }
-        
-         
 
          
 
