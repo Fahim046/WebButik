@@ -19,13 +19,15 @@ namespace WebButik.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "user")]
         public ActionResult AddCart(Product product)
         {
-            //return PartialView("_CustomerView");
+            
             User.Identity.GetUserId();
 
-            // User -> Coustemer -> Cart -> CartRows -> Product
+            // database.customers.find(id)
+             
+            // User -> Customer -> Cart -> CartRows -> Product
             return View();
 
         }

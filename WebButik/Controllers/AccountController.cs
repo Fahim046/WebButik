@@ -15,6 +15,7 @@ namespace WebButik.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        public static ButikDB db = new ButikDB();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -155,7 +156,9 @@ namespace WebButik.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-
+                    //Customer newcustomer = new Customer();
+                    // db.Customer.Add(newcustomer);
+                    //user.Id
                     UserManager.AddToRole(user.Id, "Admin");
                     UserManager.AddToRole(user.Id, "User");
 

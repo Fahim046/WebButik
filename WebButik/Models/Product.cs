@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -26,11 +27,12 @@ namespace WebButik.Models
         [MaxLength(100)]
         public string ProductSize { get; set; }
 
-
+        [ForeignKey("CartRowId")]
+        public int CartrowId { get; set; }
 
         //public List<CartRow> Cartrows { get; set; }
         //public List<OrderRow> Orderrows { get; set; }
-        
+
 
 
 
