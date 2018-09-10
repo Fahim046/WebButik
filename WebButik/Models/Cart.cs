@@ -12,8 +12,8 @@ namespace WebButik.Models
         [Key]
         public int CartId {get;set;}
 
-        [ForeignKey ("CustomerId") ]
-        public int CustomerId { get; set; }
+        //[ForeignKey ("CustomerId")]
+        //public int CustomerId { get; set; }
 
         public List<CartRow> Cartrows { get; set; } // One - Many Realtionship
         //public Customer Customer { get; set; }  // One - One Relationship

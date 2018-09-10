@@ -22,9 +22,8 @@ namespace WebButik.Controllers
         [Authorize(Roles = "user")]
         public ActionResult AddCart(Product product)
         {
-            
-            User.Identity.GetUserId();
-
+             User.Identity.GetUserId();
+             
             // database.customers.find(id)
              
             // User -> Customer -> Cart -> CartRows -> Product
