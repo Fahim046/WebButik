@@ -13,8 +13,6 @@ namespace WebButik.Models
         [Key]
         public int OrderRowId { get; set; }
 
-        [ForeignKey("OrderId")]
-        public int OrderId { get; set; }
 
     }
 }

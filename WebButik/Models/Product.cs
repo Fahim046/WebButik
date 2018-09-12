@@ -12,7 +12,6 @@ namespace WebButik.Models
 
         [Key]
         public int ProductId { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string ProductName { get; set; }
@@ -27,8 +26,6 @@ namespace WebButik.Models
         [MaxLength(100)]
         public string ProductSize { get; set; }
 
-        [ForeignKey("CartRowId")]
-        public int CartrowId { get; set; }
 
         //public List<CartRow> Cartrows { get; set; }
         //public List<OrderRow> Orderrows { get; set; }

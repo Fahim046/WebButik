@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using WebButik.Models;
 using Microsoft.AspNet.Identity;
-
 namespace WebButik.Controllers
 {
     public class CustomerController : Controller
@@ -22,10 +21,13 @@ namespace WebButik.Controllers
         [Authorize(Roles = "user")]
         public ActionResult AddCart(Product product)
         {
+
              User.Identity.GetUserId();
              
-            // database.customers.find(id)
-             
+
+
+
+            // database.user.find(id)
             // User -> Customer -> Cart -> CartRows -> Product
             return View();
 

@@ -14,12 +14,13 @@ namespace WebButik.Models
         public int CartrowId { get; set; }
         public int Amount { get; set; }
 
-        [ForeignKey("CartId")]
-        public int CartId { get; set; }
+        //[ForeignKey("CartId")] // No need to use foreignKey.. It is used to trace back in the relationship diagram.. While to go forward
+        //in the diagram the simple relationship (One - One Relationships &  One - Many Relationships) is enough to show. as shown in the following:
+        //public int CartId { get; set; }
 
         //One - One Relationships
         public Product Product { get; set; }
-        public Cart Cart { get; set; }
+        //public Cart Cart { get; set; }
 
     }
 }
