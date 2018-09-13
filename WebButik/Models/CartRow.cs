@@ -18,9 +18,9 @@ namespace WebButik.Models
         //in the diagram the simple relationship (One - One Relationships &  One - Many Relationships) is enough to show. as shown in the following:
         //public int CartId { get; set; }
 
-        //One - One Relationships
+        //One - One Relationships 
         public Product Product { get; set; }
-        //public Cart Cart { get; set; }
+        
 
     }
 }

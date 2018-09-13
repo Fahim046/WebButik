@@ -17,7 +17,7 @@ namespace WebButik.Models
         //public int CustomerId { get; set; }
 
         public List<CartRow> Cartrows { get; set; } // One - Many Realtionship
-        //public Customer Customer { get; set; }  // One - One Relationship
+        
 
     }
 }

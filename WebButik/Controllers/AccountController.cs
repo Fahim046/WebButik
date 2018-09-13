@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -156,13 +157,26 @@ namespace WebButik.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    //Customer newcustomer = new Customer();
-                    // db.Customer.Add(newcustomer);
+
+                    Customer newcustomer = new Customer();
+                    newcustomer.FirstName = model.Email;
+                    newcustomer.LastName = model.Email;
+                    newcustomer.Address = model.Email;
+                    newcustomer.Telephone = model.Email;
+                    newcustomer.Cart = new Cart();
+                    newcustomer.Cart.Cartrows = new List<CartRow>();
+                    newcustomer.Orders = new List<Order>();
+
+                    db.Customer.Add(newcustomer);
+                    db.SaveChanges();
+                    user.CustomerID = newcustomer.CustomerId;
                     //user.Id
                     UserManager.AddToRole(user.Id, "Admin");
                     UserManager.AddToRole(user.Id, "User");
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    
+
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link

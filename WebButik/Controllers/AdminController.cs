@@ -64,7 +64,7 @@ namespace WebButik.Controllers
 
            if(User.IsInRole("Admin"))
             {
-                return PartialView("_menProduct", db.Product.ToList());
+                //return PartialView("_menProduct", db.Product.ToList());
             }
                       
                 return View("MenProduct", db.Product.ToList());

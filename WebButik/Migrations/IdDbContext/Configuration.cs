@@ -44,6 +44,8 @@ namespace WebButik.Migrations.IdDbContext
             ApplicationUser admin = userManager.FindByEmail("admin@admin.se");
             ApplicationUser user = userManager.FindByEmail("user@user.se");
 
+
+
             userManager.AddToRole(admin.Id, "Admin");
             userManager.AddToRole(user.Id, "User");
         }

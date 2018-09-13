@@ -10,7 +10,8 @@ namespace WebButik.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
-
+        ApplicationDbContext userDB = new ApplicationDbContext();
+        ButikDB butikDB = new ButikDB();
 
         public ActionResult CustomerView()
         {
@@ -18,22 +19,40 @@ namespace WebButik.Controllers
         }
 
 
-        [Authorize(Roles = "user")]
-        public ActionResult AddCart(Product product)
+        [Authorize(Roles = "User")]
+        public ActionResult AddCart(int id)
         {
 
-             User.Identity.GetUserId();
-             
+            Product product = butikDB.Product.Find(id);
 
+            if (product != null)
+            {
+
+                string userId = User.Identity.GetUserId();
+
+                int customerID = userDB.Users.Find(userId).CustomerID;
+
+                Cart cart = butikDB.Customer.Include("Cart").Include("Cart.Cartrows").SingleOrDefault(c => c.CustomerId == customerID).Cart;
+
+                cart.Cartrows.Add(new CartRow
+                {
+                    //Amount = 1,
+                    Product = product
+                });
+
+                butikDB.SaveChanges();
+            }
 
 
             // database.user.find(id)
             // User -> Customer -> Cart -> CartRows -> Product
-            return View();
+
+
+            return View();  // TODO!!!!!!!!
 
         }
 
-         
+
 
     }
 }

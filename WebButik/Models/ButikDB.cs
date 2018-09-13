@@ -15,6 +15,8 @@ namespace WebButik.Models
 
         public DbSet<Product> Product { get; set; }
         public DbSet<Customer> Customer { get; set; }
-  
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartRow> CartRow { get; set; }
+
     }
 }
