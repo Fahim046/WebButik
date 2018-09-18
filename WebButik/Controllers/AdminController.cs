@@ -37,10 +37,9 @@ namespace WebButik.Controllers
                 return PartialView("_AdminView");
 
                // return PartialView("_productList", db.Product.ToList());
-                //  return RedirectToAction("Index");
+               //  return RedirectToAction("Index");
 
             }
-
             else
             {
                 return PartialView("_create");
@@ -62,7 +61,7 @@ namespace WebButik.Controllers
         public ActionResult MenProduct()
         {
 
-           if(User.IsInRole("Admin"))
+           if(User.IsInRole("User"))
             {
                 //return PartialView("_menProduct", db.Product.ToList());
             }
